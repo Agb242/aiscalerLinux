@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./backend/.env
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]  # Remplace par l'endpoint de santé de ton API
+      interval: 30s
+      retries: 3
+      start_period: 10s
+      timeout: 10s
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]  # Remplace par un endpoint frontend si nécessaire
+      interval: 30s
+      retries: 3
+      start_period: 10s
+      timeout: 10s
