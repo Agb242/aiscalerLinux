@@ -27,8 +27,13 @@ jobs:
         run: |
           scp -r . aiscaler@34.58.140.96:/home/aiscaler
 
-      - name: Run Docker build and deploy on GCP
-      - run: |
-          ssh user@your-gcp-ip << 'EOF'
+      - name: Run and deploy on GCP
+        run: |
+          ssh aiscaler@34.58.140.96 << 'EOF'
+
+            cd /home/aiscaler/linux
+            npm install
+            npm run build
+            npm start
             
           EOF
