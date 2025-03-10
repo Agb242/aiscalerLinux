@@ -1,43 +1,47 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import "@/styles/globals.css";
 
-export default function Index() {
+const Index = () => {
   const router = useRouter();
 
   return (
-    <div className="relative flex flex-col md:flex-row h-screen bg-gray-900 text-white">
-      {/* Partie gauche avec l'image */}
-      <div className="md:w-1/2 w-full h-1/2 md:h-full flex items-center justify-center p-5">
-        <img
-          className="w-full h-auto object-cover rounded-lg shadow-xl"
-          src="/servers.jpg"
-          alt="Servers"
-        />
-      </div>
+    <div className="landing-container">
+      <header className="landing-header">
+        <h1 className="landing-title">Linux via AiScaler</h1>
+        <p className="landing-subtitle">
+          Connect to and command your remote servers effortlessly.
+        </p>
+      </header>
 
-      {/* Partie droite avec le texte */}
-      <div className="absolute inset-0 md:w-1/2 flex flex-col justify-center items-center text-center p-8 space-y-6 bg-black bg-opacity-50">
-        <div className="space-y-4">
-          <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-4 shadow-lg">
-            Linux via <span className="text-blue-400">AiScaler</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 leading-relaxed shadow-lg">
-            Connect to and command your remote servers effortlessly with{" "}
-            <span className="font-bold">AISCALER</span>, a web-based{" "}
-            <span className="font-bold">terminal emulator</span>. Master your
-            systems directly from your browser!
-          </p>
+      <main className="landing-main">
+        <div className="landing-left">
+          <Image
+            className="landing-image"
+            src="/servers.jpg"
+            alt="Servers"
+            width={500}
+            height={300}
+            priority
+          />
         </div>
 
-        {/* Bouton pour accéder au terminal */}
-        <button
-          onClick={() => router.push("/terminal")}
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-lg transition duration-300 ease-in-out text-xl shadow-lg transform hover:scale-105"
-        >
-          Go to Connection
-        </button>
-      </div>
+        <div className="landing-right">
+          <h2 className="landing-headline">Control Your Servers Easily</h2>
+          <p className="landing-description">
+            With AiScaler, manage your Linux servers directly from your browser
+            using a powerful web-based terminal emulator.
+          </p>
+          <div className="landing-buttons">
+            <button onClick={() => router.push("/terminal")}>Go to Connection</button>
+          </div>
+        </div>
+      </main>
     </div>
   );
-}
+};
+
+export default Index;
+

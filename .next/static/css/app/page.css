@@ -1,0 +1,156 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/styles/globals.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
+  color: #333;
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.landing-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.landing-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.landing-main {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centre le conteneur verticalement */
+  gap: 50px;
+  width: 100%;
+}
+
+.landing-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.landing-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.landing-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.landing-headline {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.landing-description {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.landing-buttons {
+  width: 100%;
+  text-align: left; /* Aligner le bouton au début du texte */
+}
+
+.landing-buttons button {
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block; /* Permet de l'aligner correctement */
+}
+
+.landing-buttons button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landing-main {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .landing-left,
+  .landing-right {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .landing-title {
+    font-size: 3rem;
+  }
+
+  .landing-headline {
+    font-size: 2rem;
+  }
+
+  .landing-description {
+    font-size: 1rem;
+  }
+
+  .landing-buttons button {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 16px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-title {
+    font-size: 2.5rem;
+  }
+
+  .landing-headline {
+    font-size: 1.8rem;
+  }
+
+  .landing-description {
+    font-size: 1rem;
+  }
+
+  .landing-buttons button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+

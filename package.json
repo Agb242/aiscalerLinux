@@ -5,14 +5,13 @@
   "scripts": {
     "dev": "concurrently \"node server.js\" \"next dev\"",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently \"node server.js\" \"next start\"",
     "lint": "next lint"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dockerode": "^4.0.4",
     "express": "^4.21.2",
-    "framer-motion": "^12.4.10",
     "http": "^0.0.1-security",
     "next": "15.2.1",
     "react": "^19.0.0",
@@ -28,5 +27,17 @@
     "concurrently": "^9.1.2",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agb242/aiscalerLinux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Agb242/aiscalerLinux/issues"
+  },
+  "homepage": "https://github.com/Agb242/aiscalerLinux#readme"
 }
