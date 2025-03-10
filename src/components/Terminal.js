@@ -50,7 +50,7 @@ export default function TerminalComponent() {
           terminal.current.writeln("🔗 Connexion au serveur...");
         }
 
-        const ws = new WebSocket(`wss://${window.location.host}/ws/`);
+        const ws = new WebSocket(`ws://localhost:8080`);
         ws.onopen = () => {
           terminal.current?.writeln("\r\n✅ Connecté au serveur Aiscaler !");
         };
