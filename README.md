@@ -253,7 +253,7 @@ L'import de xterm se fait dans le hook useEffect afin d'éviter le rendu côté 
 **Teste l'interaction en tapant des commandes dans le terminal. Les données doivent être envoyées au serveur WebSocket et la réponse affichée dans le terminal.**
 
 
-## Configurer un domaine et un reverse proxy
+## Configurer un domaine et un reverse proxy 
 
 Assure-toi que ton domaine pointe vers l'adresse IP du serveur qui héberge ton application Next.js.
 
@@ -291,7 +291,7 @@ server {
     proxy_cache_bypass $http_upgrade;
   }
   location /ws/ {
-    proxy_pass http://localhost:3000;  # Port de l'application Next.js
+    proxy_pass http://localhost:8080;  # Port de l'application Next.js
     proxy_http_version 1.1;
     proxy_set_header Upgrade $http_upgrade;
     proxy_set_header Connection 'upgrade';
